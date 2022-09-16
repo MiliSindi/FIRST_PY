@@ -70,49 +70,107 @@
 # - 6782 -> 23
 # - 0,56 -> 11
 
-n = input(' Write number: ')
-sum = 0
-for i in n :
-    if i.isdigit():
-        sum+= int(i)
-print (sum)        
+# n = input(' Write number: ')
+# sum = 0
+# for i in n :
+#     if i.isdigit():
+#         sum+= int(i)
+# print (sum)        
 
 # 2.Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
 # Пример:
 # пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 
-import math
-N = int (input ('Введите число: '))
-for i in range (1,N+1):
-    print (math.factorial(i), end=' ')
+# import math
+# N = int (input ('Введите число: '))
+# for i in range (1,N+1):
+#     print (math.factorial(i), end=' ')
 
 # 3.Задайте список из n чисел последовательности $(1+\frac 1 n)^n$ и выведите на экран их сумму.
 # Пример:
 # Для n = 6: {1: 4, 2: 7, 3: 10, 4: 13, 5: 16, 6: 19}
 
-n= int (input ('Введите число: '))
-dict = {}
-for i in range (1,n+1):
-    dict[i] = (1+1/i)**i
-print (dict)
-print (sum(dict.values()))
+# n= int (input ('Введите число: '))
+# dict = {}
+# for i in range (1,n+1):
+#     dict[i] = (1+1/i)**i
+# print (dict)
+# print (sum(dict.values()))
 
 
 # 4. Задайте список из N элементов, заполненных числами из промежутка [-N, N]. Найдите произведение элементов на указанных позициях. 
 # Позиции хранятся в файле file.txt в одной строке одно число.
 
-from asyncore import read
-n = [-7, 2, 3, 4, -3, -2, 7]
-a = open ('text.txt' , 'r')
-pr = 1
-for i in a.read ().splitlines():
-    pr = pr * n [int(i)]
-print (pr)
+# from asyncore import read
+# n = [-7, 2, 3, 4, -3, -2, 7]
+# a = open ('text.txt' , 'r')
+# pr = 1
+# for i in a.read ().splitlines():
+#     pr = pr * n [int(i)]
+# print (pr)
 
 # 5.Реализуйте алгоритм перемешивания списка.
 
-import random
-x = list(range(0,9))
-print (x)
-random.shuffle(x)
-print (x)
+# import random
+# x = list(range(0,9))
+# print (x)
+# random.shuffle(x)
+# print (x)
+
+# ===================================ДЗ №3 =========================================
+# 1.Задайте список из нескольких чисел. Напишите программу, которая найдёт сумму элементов списка, стоящих на нечётной позиции.
+# Пример:
+# - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
+
+# list = [2, 3, 5, 9, 3]
+# sum = 0
+# for i in range (1, len(list), 2):
+#     sum += list [i]
+# print (sum)    
+
+# 2. Напишите программу, которая найдёт произведение пар чисел списка. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+# Пример:
+# - [2, 3, 4, 5, 6] => [12, 15, 16];
+# - [2, 3, 5, 6] => [12, 15]
+
+# list = [2, 3, 4, 5, 6]
+# new_list = []
+# for i in range (len(list)//2 + len(list) % 2):
+#     new_list.append(list[i] * list[len(list) - 1 - i])
+# print (new_list)    
+
+# 3. Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу между максимальным и минимальным значением дробной части элементов.
+# Пример:
+# - [1.1, 1.2, 3.1, 5, 10.01] => 0.19
+
+# list = [float ('0.' + str(i).split('.')[1]) for i in [1.1, 1.2, 3.1, 5, 10.01] if '.' in str(i)]
+# print(list)
+# print (max(list)-min(list))
+
+# 4. Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+# Пример:
+# - 45 -> 101101
+# - 3 -> 11
+# - 2 -> 10
+
+# n = int(input("Введите число: "))
+# new_str = ''
+# while n > 0:
+#     new_str = str(n%2) + new_str
+#     n//=2
+# print(new_str)    
+
+# 5. Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
+# Пример:
+# для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21] 
+
+# k=int(input("Введите k: "))
+# listfibonacci = [0]*(k*2+1)
+# print(listfibonacci)
+# listfibonacci[k]=0
+# listfibonacci[k+1]=1
+# for i in range (k+2, len(listfibonacci)):
+#     listfibonacci[i]= listfibonacci[i-2]+listfibonacci[i-1]
+# for i in range (k,-1, -1):
+#     listfibonacci[i]= listfibonacci[i+2]-listfibonacci[i+1]    
+# print(listfibonacci)    
