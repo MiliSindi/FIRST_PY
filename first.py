@@ -245,3 +245,71 @@
 #     third = (str())
 
 # print(f'{first}{second}{third}')   
+
+
+# =======================================ДЗ № 5=========================================
+
+# 1. Напишите программу, удаляющую из текста все слова, содержащие ""абв"".
+
+# some_str = 'Знаем вероабвятно, как выжить, но не знаем, как жить вабв этойабв странеабв.'.split()
+# new_str = (' '.join([word for word in some_str if 'абв'not  in word]))
+# print (new_str)
+
+# 2.Создайте программу для игры с конфетами человек против человека.
+# Условие задачи: На столе лежит 2021 конфета. Играют два игрока делая ход друг после друга. 
+# Первый ход определяется жеребьёвкой. За один ход можно забрать не более чем 28 конфет. 
+# Все конфеты оппонента достаются сделавшему последний ход. 
+# Сколько конфет нужно взять первому игроку, чтобы забрать все конфеты у своего конкурента?
+# a) Добавьте игру против бота
+# b) Подумайте как наделить бота ""интеллектом""
+
+
+
+# 3. Создайте программу для игры в ""Крестики-нолики"".
+
+# game_matrix = [[None, None, None], [None, None, None], [None, None, None]]
+# game_is_on = True
+# while game_is_on:
+#     # Крестик - латинская буква X, нолик - латинская буква O 
+#     # Ходы принимаются в формате [0][0] = "X" или [2][1] = "О"
+#     move = input()
+#     exec("game_matrix" + move)
+#     for row in game_matrix:
+#         print(row)
+    
+#     reference_matrix = [
+#         game_matrix[0],
+#         game_matrix[1],
+#         game_matrix[2],
+#         [i[0] for i in game_matrix],
+#         [i[1] for i in game_matrix],
+#         [i[2] for i in game_matrix],
+#         [game_matrix[0][0], game_matrix[1][1], game_matrix[2][2]],
+#         [game_matrix[0][2], game_matrix[1][1], game_matrix[2][0]]
+#     ]
+#     for item in reference_matrix:
+#         result = list(set(item))
+#         if len(result) == 1 and result[0] != None:
+#             print("Game over!")
+#             game_is_on = False
+#             break
+
+# 4. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
+# Входные и выходные данные хранятся в отдельных текстовых файлах.
+
+# def encode(s):
+#     encoding = "" # сохраняет выходную строку
+#     i = 0
+#     while i < len(s):
+#         # подсчитывает количество вхождений символа в индексе `i`
+#         count = 1
+#         while i + 1 < len(s) and s[i] == s[i + 1]:
+#             count = count + 1
+#             i = i + 1
+#         # добавляет к результату текущий символ и его количество
+#         encoding += str(count) + s[i]
+#         i = i + 1
+#     return encoding
+# if __name__ == '__main__':
+#     s = 'ABBCCCD'
+#     print(encode(s)) 
